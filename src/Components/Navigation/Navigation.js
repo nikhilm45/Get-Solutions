@@ -21,16 +21,16 @@ return (
                     Post
                 </NavLink>
             </NavMenu>
-            <div class="wrap">
-                <div class="search">
-                    <input type="text" class="searchTerm" placeholder="What are you looking for?"/>
-                    <button type="submit" class="searchButton">
-                        <i class="fa fa-search"></i>
+            <div className="wrap">
+                <div className="search">
+                    <input type="text" className="searchTerm" placeholder="What are you looking for?"/>
+                    <button type="submit" className="searchButton">
+                        <i className="fa fa-search"></i>
                     </button>
                 </div>
             </div>
-            <button class="login" onClick={loginNav}>login</button>
-            <button class="signup" onClick={signinNav}>Signup</button>
+            <button className="login" onClick={loginNav}>login</button>
+            <button className="signup" onClick={signinNav}>Signup</button>
         </Nav>
 	</div>
 );

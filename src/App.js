@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navigation from './Components/Navigation';
+import Navigation from './Components/Navigation/Navigation';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { HomePage } from './Components/HomePage';
 import { PostQ } from './Components/PostQ/PostView';
