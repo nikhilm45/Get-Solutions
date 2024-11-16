@@ -674,6 +674,7 @@ label.float {
 
 .posted-questions {
   display: flex; /* Align children horizontally */
+  flex-direction: column; /* Make sure the elements are stacked vertically */
   justify-content: space-between; /* Push "Give Solution" to the right */
   align-items: center; /* Vertically align content */
   padding: 0 20px;
@@ -686,6 +687,11 @@ label.float {
   border-left: 5px solid #ff6b6b; /* Accent border on the left side */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
   overflow: hidden;
+}
+
+.que-card {
+  display: flex;
+  flex-direction: row;
 }
 
 /* Question text style */
@@ -721,4 +727,47 @@ label.float {
 /* Hover effect for "Give Solution" */
 .give-solution:hover {
   color: #ff3b3b;
+}
+
+/* Give Solutions */
+
+/* Solution input container with hidden state */
+.solution-input-container {
+  overflow: hidden; /* Hide anything outside the container */
+  max-height: 0; /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: max-height 1s ease, opacity 1s ease; /* Smooth transition */
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Show solution input container when expanded */
+.solution-input-container.show {
+  max-height: 500px; /* Arbitrary large value to ensure full expansion */
+  opacity: 1; /* Fully visible */
+}
+
+/* Solution input styling */
+.solution-input {
+  width: -webkit-fill-available;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 100px;
+  resize: none;
+}
+
+/* Submit button for the solution */
+.submit-solution-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Centers the button horizontally */
 }

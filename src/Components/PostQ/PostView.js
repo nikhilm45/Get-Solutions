@@ -3,12 +3,20 @@ import React, { useState } from "react";
 export const PostQ = () => {
   const [inputText, setInputText] = useState("");
   const [postedQuestions, setPostedQuestions] = useState([]);
+  const [expandedQuestionIndex, setExpandedQuestionIndex] = useState(null); // Track expanded question
 
   const handlePost = () => {
     if (inputText.trim()) {
-      // Check if input is not empty
       setPostedQuestions([...postedQuestions, inputText]); // Add the new question to the list
       setInputText(""); // Clear the input field
+    }
+  };
+
+  const toggleSolution = (index) => {
+    if (expandedQuestionIndex === index) {
+      setExpandedQuestionIndex(null); // Collapse the solution
+    } else {
+      setExpandedQuestionIndex(index); // Expand the solution for the selected question
     }
   };
 
@@ -26,7 +34,7 @@ export const PostQ = () => {
             className="post-box"
             placeholder="Post your Question!"
             value={inputText}
-            onChange={(e) => setInputText(e.target.value)} // Update input text on change
+            onChange={(e) => setInputText(e.target.value)}
           />
           <button className="post-btn" onClick={handlePost}>
             Post
@@ -44,7 +52,24 @@ export const PostQ = () => {
           {postedQuestions.map((question, index) => (
             <div key={index} className="posted-questions">
               <p>{question}</p>
-              <span className="give-solution">Give Solution</span>
+              <span
+                className="give-solution"
+                onClick={() => toggleSolution(index)} // Toggle solution input visibility
+              >
+                {expandedQuestionIndex === index ? "🔼" : "Solutions"}
+              </span>
+
+              <div
+                className={`solution-input-container ${
+                  expandedQuestionIndex === index ? "show" : ""
+                }`}
+              >
+                <textarea
+                  className="solution-input"
+                  placeholder="Your solution here..."
+                />
+                <button className="submit-solution-btn">Submit Solution</button>
+              </div>
             </div>
           ))}
         </div>
