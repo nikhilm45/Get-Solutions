@@ -97,13 +97,15 @@ export const SignupView = () => {
           <label className={hasValue("password") ? "float" : ""}>
             Password
           </label>
-          <button
-            type="button"
-            className="toggle-password-btn"
-            onClick={togglePasswordVisibility}
-          >
-            {showPassword ? "👁️" : "🙈"}
-          </button>
+          {formData.password.length > 0 && (
+            <button
+              type="button"
+              className="toggle-password-btn"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? "👁️" : "🙈"}
+            </button>
+          )}
         </div>
 
         <div className="signupGroup3 password-field">
@@ -120,13 +122,15 @@ export const SignupView = () => {
           <label className={hasValue("confirmPassword") ? "float" : ""}>
             Re-enter Password
           </label>
-          <button
-            type="button"
-            className="toggle-password-btn"
-            onClick={toggleConfirmPasswordVisibility}
-          >
-            {showConfirmPassword ? "👁️" : "🙈"}
-          </button>
+          {formData.confirmPassword.length > 0 && (
+            <button
+              type="button"
+              className="toggle-password-btn"
+              onClick={toggleConfirmPasswordVisibility}
+            >
+              {showConfirmPassword ? "👁️" : "🙈"}
+            </button>
+          )}
         </div>
 
         {error && (
@@ -137,6 +141,7 @@ export const SignupView = () => {
 
         <div className="terms-container">
           <input
+            className="terms-checkbox"
             type="checkbox"
             id="agreeTerms"
             checked={agreedToTerms}
@@ -149,7 +154,7 @@ export const SignupView = () => {
           </h5>
         </div>
 
-        <button type="submit" className="login-btn">
+        <button type="submit" className="login-btn" disabled={!agreedToTerms}>
           Sign Up
         </button>
       </form>

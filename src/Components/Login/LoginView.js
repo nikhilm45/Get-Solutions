@@ -1,6 +1,7 @@
 // import React, { useEffect } from "react";
 // import LoginApi from "../Api/LoginApi";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export const LoginView = () => {
     // const demoFunc = () => {
@@ -28,7 +29,7 @@ export const LoginView = () => {
                     <label>Password</label>
                 </div>
                 <div>
-                        <a href="url" className="pass-rec">Forgot password?</a>
+                        <Link to="/forgot-password" className="pass-rec">Forgot password?</Link>
                 </div>
                 <button className="login-btn">Login</button>
             </form>

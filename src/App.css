@@ -608,7 +608,13 @@ label.float {
 
 .terms-container {
   display: flex;
+  align-items: center;
   margin: 15px 0;
+}
+
+.terms-checkbox {
+  width: 20px;
+  height: 20px;
 }
 
 .terms-container input[type="checkbox"] {
@@ -771,3 +777,59 @@ label.float {
   margin-left: auto;
   margin-right: auto; /* Centers the button horizontally */
 }
+
+/* Forgot Password */
+.forgot-password-box {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #dde9f7;
+}
+
+.forgot-password-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #5264ae;
+}
+
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.forgot-password-group {
+  width: 100%; /* Ensure the group takes full width */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.forgot-password-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.forgot-password-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--background-color);
+  color: #5264ae;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.forgot-password-btn:hover {
+  background-color: #5264ae;
+  color: #ffffff;
+}
+
