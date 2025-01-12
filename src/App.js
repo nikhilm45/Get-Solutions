@@ -6,6 +6,7 @@ import { HomePage } from './Components/HomePage';
 import { PostQ } from './Components/PostQ/PostView';
 import { LoginView } from './Components/Login/LoginView';
 import { SignupView } from './Components/Signup/SignpView';
+import {ForgotPassword} from './Components/Login/ForgotPassword';
 
 function App() {
 return (
@@ -16,6 +17,7 @@ return (
 		<Route path='/postq' component={PostQ} />
 		<Route path='/login' component={LoginView} />
 		<Route path='/signup' component={SignupView} />
+		<Route path="/forgot-password" component={ForgotPassword} />
 	</Switch>
 	</Router>
 );
