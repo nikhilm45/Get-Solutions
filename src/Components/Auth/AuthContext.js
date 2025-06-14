@@ -6,9 +6,6 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = (credentials) => {
-    // Implement your login logic here
-    // For example, you can call an API to verify credentials
-    // If successful, set isAuthenticated to true
     setIsAuthenticated(true);
   };
 

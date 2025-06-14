@@ -10,7 +10,6 @@ export const LoginView = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement your login logic here
     login({ email, password });
     history.push('/home'); // Redirect to the home page after successful login
   };
