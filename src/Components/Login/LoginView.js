@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../Auth/AuthContext';
 import { useHistory } from 'react-router-dom';
+import { getData } from '../../Services/api';
 
 export const LoginView = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useAuth();
   const history = useHistory();
+  //const [data, setData] = useState(null);
+
+  // useEffect(() => {
+  //   getData().then(setData).catch(console.error);
+  // }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +23,7 @@ export const LoginView = () => {
   return (
     <div className="loginBox">
       <h2 className="login-title">Login</h2>
+      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="group">
           <input
